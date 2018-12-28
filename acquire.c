@@ -1,7 +1,5 @@
 #include "tsa.h"
 
-#include "tsa.h"
-
 tsa_mutex mut;
 
 void acquire() TSA_ACQUIRE(&mut)
