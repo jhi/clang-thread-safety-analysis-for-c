@@ -36,6 +36,11 @@ overunlock:
 underunlock:
 	-$(CC) $(CFLAGS) underunlock.c
 
+# http://astyle.sourceforge.net/
+# The 1TBS is "One True Brace Style", which is K&R
+# with the enforced "enbraced" statements after if/while/for.
+# It is beautiful.  For the style to work with astyle you need
+# at least 1.24 (February 2010).
 astyle:
 	astyle --style=1tbs *.h *.c
 
