@@ -51,7 +51,7 @@ To see how to fix the problems, issue
 and study the example programs.
 
 The first branch of the `#ifndef TSA_PASS` shows the wrong way (which
-may be> "doing nothing"), while the second branch shows the right way.
+may be: "doing nothing"), while the second branch shows the right way.
 
 ## TSA is not TSAN
 
@@ -62,6 +62,10 @@ instrumentation to the compiler output so that the runtime can detect
 data races during execution.  The added instrumentation adds some
 execution overhead, and quite considerable memory overhead.  None
 of this happens with TSA.
+
+## clang only
+
+As far as I know TSA is available only for `clang, not `gcc`.
 
 ## License
 
