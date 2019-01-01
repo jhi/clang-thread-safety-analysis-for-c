@@ -65,7 +65,7 @@ of this happens with TSA.
 
 ## clang only
 
-As far as I know TSA is available only for `clang, not `gcc`.
+As far as I know TSA is available only for `clang`, not `gcc`.
 
 ## License
 
