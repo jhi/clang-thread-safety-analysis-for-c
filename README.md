@@ -3,8 +3,11 @@
 TSA is a static analysis tool for clang.
 
 By adding annotations (attributes) to the source code that is using
-the POSIX threads API, and compiling with ```clang -Wthread-safety```
-the source code is analyzed in compile-time for unsafe locking
+the POSIX threads API, and compiling with
+
+```clang -Wthread-safety```
+
+The source code is analyzed in compile-time for unsafe locking
 patterns that would lead into data races or deadlocks, or both.
 
 The official documentation for TSA is
@@ -25,7 +28,9 @@ That is, in fact, why this repository exists.
 5. Suffer.
 6. Enjoy.
 
-You can see example usage and the errors caused by issuing ```make```
+You can see example usage and the errors caused by issuing
+
+```make```
 
 Each of the example programs demonstrates one particular type of error.
 
@@ -39,15 +44,18 @@ int main {
 }
 ```  
 
-To see how to fix the problems, issue ```make pass``` and study the
-example programs.
+To see how to fix the problems, issue
+
+```make pass```
+
+and study the example programs.
 
 The first branch of the `#ifndef TSA_PASS` shows the wrong way (which
 may be> "doing nothing"), while the second branch shows the right way.
 
 ## TSA is not TSAN
 
-TSA is NOT the same thing as *thread sanitizer* or *tsan*.
+TSA is **not** the same thing as *thread sanitizer* or *tsan*.
 
 The TSA is completely compile-time, whereas the thread sanitizer adds
 instrumentation to the compiler output so that the runtime can detect
