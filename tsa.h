@@ -59,7 +59,7 @@
  *
  * More than one mutex may be specified, comma-separated.
  *
- * void Foo() TSA_REQUIRES(mutex);
+ * void Foo(void) TSA_REQUIRES(mutex);
  */
 #define TSA_REQUIRES(...) TSA(requires_capability(__VA_ARGS__))
 
@@ -69,7 +69,7 @@
  *
  * More than one mutex may be specified, comma-separated.
  *
- * void Foo() TSA_EXCLUDES(mutex);
+ * void Foo(void) TSA_EXCLUDES(mutex);
  */
 #define TSA_EXCLUDES(...) TSA(locks_excluded(__VA_ARGS__))
 
@@ -79,7 +79,7 @@
  *
  * More than one mutex may be specified, comma-separated.
  *
- * void Foo() TSA_ACQUIRE(mutex);
+ * void Foo(void) TSA_ACQUIRE(mutex);
  */
 #define TSA_ACQUIRE(...) TSA(acquire_capability(__VA_ARGS__))
 
@@ -88,13 +88,13 @@
  *
  * More than one mutex may be specified, comma-separated.
  *
- * void Foo() TSA_RELEASE(mutex);
+ * void Foo(void) TSA_RELEASE(mutex);
  */
 #define TSA_RELEASE(...) TSA(release_capability(__VA_ARGS__))
 
 /* TSA_NO_TSA is used to annotate functions.  Use only when you need to.
  *
- * void Foo() TSA_NO_TSA;
+ * void Foo(void) TSA_NO_TSA;
  */
 #define TSA_NO_TSA TSA(no_thread_safety_analysis)
 
