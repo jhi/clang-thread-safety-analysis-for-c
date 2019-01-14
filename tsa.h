@@ -54,7 +54,7 @@
  */
 #define TSA_PT_GUARDED_BY(x) TSA(pt_guarded_by(x))
 
-/* The TSA_REQUIRED() is used to annotate functions: the caller of the
+/* The TSA_REQUIRES() is used to annotate functions: the caller of the
  * function MUST hold the resource, the function will NOT release it.
  *
  * void Foo() TSA_REQUIRES(mutex);
