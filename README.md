@@ -51,7 +51,8 @@ To see how to fix the problems, issue
 and study the example programs.
 
 The first branch of the `#ifndef TSA_PASS` shows the wrong way (which
-may be: "doing nothing"), while the second branch shows the right way.
+may be: "doing nothing"), while the second branch, the `#else`, shows
+the right way.
 
 ## TSA is not TSAN
 
@@ -66,6 +67,7 @@ of this happens with TSA.
 ## clang only
 
 As far as I know TSA is available only for `clang`, not `gcc`.
+It should be fully available since clang 3.6.
 
 ## License
 
