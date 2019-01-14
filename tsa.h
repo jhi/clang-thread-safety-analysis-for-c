@@ -57,32 +57,40 @@
 /* The TSA_REQUIRES() is used to annotate functions: the caller of the
  * function MUST hold the resource, the function will NOT release it.
  *
+ * More than one mutex may be specified, comma-separated.
+ *
  * void Foo() TSA_REQUIRES(mutex);
  */
-#define TSA_REQUIRES(x) TSA(requires_capability(x))
+#define TSA_REQUIRES(...) TSA(requires_capability(__VA_ARGS__))
 
 /* TSA_EXCLUDES() is used to annotate functions: the caller of the
  * function MUST NOT hold resource, the function first acquires the
  * resource, and then releases it.
  *
+ * More than one mutex may be specified, comma-separated.
+ *
  * void Foo() TSA_EXCLUDES(mutex);
  */
-#define TSA_EXCLUDES(x) TSA(locks_excluded(x))
+#define TSA_EXCLUDES(...) TSA(locks_excluded(__VA_ARGS__))
 
 /* TSA_ACQUIRE() is used to annotate functions: the caller of the
  * function MUST NOT hold the resource, the function will acquire the
  * resource, but NOT release it.
  *
+ * More than one mutex may be specified, comma-separated.
+ *
  * void Foo() TSA_ACQUIRE(mutex);
  */
-#define TSA_ACQUIRE(x) TSA(acquire_capability(x))
+#define TSA_ACQUIRE(...) TSA(acquire_capability(__VA_ARGS__))
 
 /* TSA_RELEASE() is used to annotate functions: the caller of the
  * function MUST hold the resource, but the function will then release it.
  *
+ * More than one mutex may be specified, comma-separated.
+ *
  * void Foo() TSA_RELEASE(mutex);
  */
-#define TSA_RELEASE(x) TSA(release_capability(x))
+#define TSA_RELEASE(...) TSA(release_capability(__VA_ARGS__))
 
 /* TSA_NO_TSA is used to annotate functions.  Use only when you need to.
  *
