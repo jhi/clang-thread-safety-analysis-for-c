@@ -2,7 +2,7 @@
 
 tsa_mutex mut;
 
-void requires() TSA_REQUIRES(&mut)
+void requires(void) TSA_REQUIRES(&mut)
 {
 }
 

@@ -2,7 +2,7 @@
 
 tsa_mutex mut;
 
-void acquire() TSA_ACQUIRE(&mut)
+void acquire(void) TSA_ACQUIRE(&mut)
 {
 #ifndef TSA_PASS
 #else

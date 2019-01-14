@@ -2,7 +2,7 @@
 
 tsa_mutex mut;
 
-void excludes() TSA_EXCLUDES(&mut)
+void excludes(void) TSA_EXCLUDES(&mut)
 {
 }
 

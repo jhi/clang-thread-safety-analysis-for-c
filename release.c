@@ -2,7 +2,7 @@
 
 tsa_mutex mut;
 
-void release() TSA_RELEASE(&mut)
+void release(void) TSA_RELEASE(&mut)
 {
 #ifndef TSA_PASS
 #else
